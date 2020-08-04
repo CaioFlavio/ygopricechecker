@@ -1,0 +1,12 @@
+.match-highlight{
+    background-color: #26a69a;
+    font-weight: bold;
+}
+
+.match-list-text{
+    font-weight: bold;
+}
+
+.versus-match-list {
+    border-bottom: 1px solid black !important;
+}

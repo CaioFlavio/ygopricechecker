@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Spiker</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row header">
+            <div class="col l5 s12">
+                <h3>YGO Price Checker</h3>
+            </div>
+            <div class="col l7 s12">
+                <div class="header-info valign-wrapper">
+                    Features Futuras:<br>
+                    - []: Deixar chama de api reativa;<br>
+                    - []: Deixar filtros reativos;<br>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row" >
+            <div id="player-selection" class="row center-align">
+                <form id="price-form" class="col s12">
+                    <div class="col s5 file-field input-field">
+                        <div class="btn">
+                          <span>Arquivo</span>
+                          <input id="price-file-input" name="price_file" type="file" />
+                        </div>
+                        <div class="file-path-wrapper">
+                          <input class="file-path validate" type="text" placeholder="Selecione o arquivo para verificação.">
+                        </div>
+                    </div>
+                    <div class="col s2 input-field">
+                        <label for="dolar">Dolar em Reais</label>
+                        <input id="dolar" type="number" min="1"/>
+                    </div>
+                    <div class="input-field col s3">
+                        <select id="variation-order">
+                          <option value="1">Variação Crescente (High)</option>
+                          <option value="2">Variação Decrescente (High)</option>
+                          <option value="3">Variação Crescente (Average)</option>
+                          <option value="4">Variação Decrescente (Average)</option>
+                          <option value="5">Variação Crescente (Low)</option>
+                          <option value="6">Variação Decrescente (Low)</option>
+                        </select>
+                        <label>Ordernar por:</label>
+                    </div>
+                    <div class="col s2 input-field">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">
+                            Verificar
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div id="preloader" class="row hide">
+                <div  class="section center-align">
+                    <div class="preloader-wrapper small active">
+                        <div class="spinner-layer spinner-green-only">
+                          <div class="circle-clipper left">
+                            <div class="circle"></div>
+                          </div><div class="gap-patch">
+                            <div class="circle"></div>
+                          </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div id="result-set" class="row">
+                <div class="col l12 s12">
+                    <div class="section">
+                        <h5 class="header">Resumo das variações</h5>
+                        <div class="row">
+                            <class class="col l12 s12">
+                                <table id="versus-stats" class="reponsive-table striped centered">
+                                    <thead>
+                                        <th>Cód.</th>
+                                        <th>Nome</th>
+                                        <th>Preço loja R$</th>
+                                        <th>Prices $ (High)</th>
+                                        <th>Prices R$ (High)</th>
+                                        <th>Variação % (High)</th>
+                                        <th>Prices $ (Average)</th>
+                                        <th>Prices R$ (Average)</th>
+                                        <th>Variação % (Average)</th>
+                                        <th>Prices $ (Low)</th>
+                                        <th>Prices R$ (Low)</th>
+                                        <th>Variação % (Low)</th>
+                                    </thead>
+                                    <tbody id="price-table-body">
+                                      
+                                    </tbody>
+                                </table>
+                            </class>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div id="scripts">
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/papaparse.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </div>
+</body>
+</html>
